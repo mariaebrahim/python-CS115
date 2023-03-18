@@ -43,12 +43,6 @@ def wordScore(S, scorelist):
     else:
         return letterScore(S[0], scorelist)+wordScore(S[1:], scorelist)
 
-def scoreList(Rack):
-    '''returns a set of words from the dictionary that can be made up by the letters provided in the Rack along with their scores''' 
-    if Rack==[]:
-        return []
-    elif Rack[0]==Dictionary[0]:
-        return
 
 def bestWord(Rack):
     '''takes a set of letter and combine sthem to make a word from a dcitionary along with their alue and returns the word that can be made iwth the highest score'''
@@ -61,25 +55,6 @@ def bestWord(Rack):
         useit=Rack[0]+[bestWord(Rack[1:])]
         return max(useit, loseit)
 
-def Dic(word, dicti):
-    '''prints the letter/word in list form with the attached scorelist'''
-    if dicti==[]:
-        return []
-    elif word==[]:
-        return ""
-    elif dicti[0][0]==word[0]:
-        return [word[0]] + Dic(word[1:], dicti)
-    else:
-        return Dic(word[0], dicti[1:][0])
-def Dic(letter, dicti):
-    if letter=="" or letter==[]:
-        return []
-    elif letter==dicti[0]:
-        return letter
-    elif letter==dicti[1][0]:
-        return letter
-    else:
-        return Dic(letter, dicti[2:][0])
 
 def fil(x, y):
     '''filters if the letters in the Rcak are in the dictionary'''
