@@ -56,17 +56,3 @@ def bestWord(Rack):
         return max(useit, loseit)
 
 
-def fil(x, y):
-    '''filters if the letters in the Rcak are in the dictionary'''
-    if x==y[0]:
-        return x + fil(x[1:], y[0:])
-    elif x=="":
-        return 0
-    elif y==[]:
-        return []
-    else:
-        return fil(x[0], y[1:])
-
-
-
-#creates a reduce funstion after to compress list
